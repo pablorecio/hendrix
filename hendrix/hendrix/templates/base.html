@@ -1,0 +1,60 @@
+{% load i18n compress %}
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{% block page_title %}pablorecio.com{% endblock %}</title>
+  <meta name="description" content="Personal website of Pablo Recio">
+  <meta name="author" content="Pablo Recio">
+  <meta name="keywords" content="python, django, webdev, git, postgresql, mysql, appengine, git, pablo, recio, pablorecio, freelance, london" />
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="{{ STATIC_URL }}js/libs/modernizr-2.6.2.min.js"></script>
+
+  {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" media="all" href="{{ STATIC_URL }}scss/styles.scss" />
+    {% block extracss %}
+    {% endblock %}
+  {% endcompress %}
+
+</head>
+<body>
+  {% block content %}
+
+  {% endblock %}
+
+<!-- JavaScript at the bottom for fast page loading -->
+{% compress js %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/bootstrap.min.js"></script>
+  {% block extrajs %}
+  {% endblock %}
+{% endcompress %}
+
+{% if not debug %}
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXXX-N'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+{% endif %}
+</body>
+</html>
