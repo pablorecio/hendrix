@@ -1,11 +1,13 @@
 # Django settings for hendrix project.
 import os
 
-BASEDIR = os.path.abspath(os.path.dirname(__file__))
+# we want this file's parent
+BASEDIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 DEBUG_TOOLBAR = DEBUG
+COMPRESS_ENABLED = not DEBUG
 
 ADMINS = (
     ('Pablo Recio', 'pablo@recio.me'),
@@ -76,7 +78,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -118,6 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'debug_toolbar',
     'gunicorn',
+    'compressor',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)
@@ -150,3 +153,7 @@ LOGGING = {
         },
     }
 }
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'sass --scss {infile} {outfile}'),
+)
