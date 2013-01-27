@@ -20,9 +20,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'hendrix',
         'USER': 'hendrix',
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -121,6 +121,8 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'gunicorn',
     'compressor',
+
+    'blog',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)
