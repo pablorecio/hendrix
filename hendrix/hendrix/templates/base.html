@@ -19,7 +19,7 @@
   <meta name="keywords" content="python, django, webdev, git, postgresql, mysql, appengine, git, pablo, recio, pablorecio, freelance, london" />
 
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
@@ -35,8 +35,9 @@
 </head>
 <body>
   <header>
+    <h1><a href="/">Pablo Recio</a></h1>
     <nav>
-      <ul>
+      <ul class="nav nav-pills">
         {% for link in links %}
           <li><a href="{{ link.url }}"{% if link.is_external %} target="_blank"{% endif %}>{{ link.title }}</a></li>
         {% endfor %}
