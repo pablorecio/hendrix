@@ -11,6 +11,9 @@ class WeightMixin(models.Model):
         default=0
     )
 
+    class Meta:
+        abstract = True
+
 
 class Tag(models.Model):
     name = models.CharField(verbose_name=_(u'Name'), max_length=100)
