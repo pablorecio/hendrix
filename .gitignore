@@ -1,3 +1,4 @@
 *.pyc
 CACHE
 .sass-cache
+.coverage
