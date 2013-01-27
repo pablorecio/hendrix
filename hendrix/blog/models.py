@@ -35,6 +35,10 @@ class Link(WeightMixin, models.Model):
         help_text=_(u'Relative if you want an internal link, full link otherwise')
     )
 
+    @property
+    def is_external(self):
+        return self.url.startswith("http://")
+
     def __unicode__(self):
         return u'%s - <%s>' % (self.title, self.url)
 

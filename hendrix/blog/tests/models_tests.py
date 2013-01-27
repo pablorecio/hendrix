@@ -51,3 +51,16 @@ class LinkTestCase(TestCase):
             self.assertEqual(link_2, links[0])
             self.assertEqual(link_1, links[1])
             self.assertEqual(link_3, links[2])
+
+    def test_is_external(self):
+        with self.assertNumQueries(3):
+            link_1 = Link.objects.create(
+                title="About", url="/about", weight=2)
+            link_2 = Link.objects.create(
+                title="Google", url="http://www.google.com", weight=1)
+            link_3 = Link.objects.create(
+                title="Links", url="/links", weight=3)
+
+            self.assertFalse(link_1.is_external)
+            self.assertTrue(link_2.is_external)
+            self.assertFalse(link_3.is_external)
