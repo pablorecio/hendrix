@@ -1,6 +1,9 @@
+from datetime import date
+
+from django.contrib.auth.models import User
 from django.test import TestCase
 
-from ..models import Link, Tag
+from ..models import Entry, Link, Tag
 
 
 class TagTestCase(TestCase):
@@ -64,3 +67,26 @@ class LinkTestCase(TestCase):
             self.assertFalse(link_1.is_external)
             self.assertTrue(link_2.is_external)
             self.assertFalse(link_3.is_external)
+
+
+class EntryTestCase(TestCase):
+
+    def setUp(self):
+        super(EntryTestCase, self).setUp()
+        self.user = User.objects.create(username="test")
+
+    def test_unicode(self):
+        with self.assertNumQueries(2):
+            entry = Entry.objects.create(
+                title="Testing entry",
+                body="This is the body",
+                created_by=self.user
+            )
+            self.assertEqual(
+                unicode(entry),
+                u"%s - Testing entry" % date.today().strftime("%Y/%m/%d")
+            )
+            self.assertEqual(
+                str(entry),
+                "%s - Testing entry" % date.today().strftime("%Y/%m/%d")
+        )
