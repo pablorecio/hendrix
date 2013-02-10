@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
 $black: #1C140D;
 $links-hover-color: #CBE86B;
@@ -8,7 +8,9 @@ $soft-grey: #ABABAB;
 body {
     margin: 0 auto;
     max-width: 940px;
-    font-family: 'Merriweather', serif;
+    // font-family: 'Merriweather', serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
 
     a {
         color: $soft-grey;
@@ -27,7 +29,7 @@ body {
 
         h1 {
             float: left;
-            font-weight: 300;
+            font-weight: bold;
             font-size: 36px;
             margin: 0;
             padding: 0;
