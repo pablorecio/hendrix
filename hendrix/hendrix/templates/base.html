@@ -34,19 +34,30 @@
 
 </head>
 <body>
-  <header>
+  <header class="global">
     <h1><a href="/">Pablo Recio</a></h1>
-    <nav>
+    <nav class="main-nav">
       <ul class="nav nav-pills">
         {% for link in links %}
           <li><a href="{{ link.url }}"{% if link.is_external %} target="_blank"{% endif %}>{{ link.title }}</a></li>
         {% endfor %}
       </ul>
     </nav>
+    <nav class="social-nav pull-right">
+      <ul class="nav">
+        <li><a href="https://twitter.com/pyriku" target="_blank"><i class="icon-twitter"></i></a></li>
+        <li><a href="https://github.com/pyriku/" target="_blank"><i class="icon-github-alt"></i></a></li>
+        <li><a href="http://www.linkedin.com/pub/pablo-recio-quijano/22/8a2/6b2/en" target="_blank"><i class="icon-linkedin"></i></a></li>
+        <li><a href="mailto:pablo@recio.me"><i class="icon-envelope"></i></a></li>
+        <li><a href="https://plus.google.com/100147006456500803606/posts" target="_blank"><i class="icon-google-plus-sign"></i></a></li>
+      </ul>
+    </nav>
   </header>
-  {% block content %}
+  <section role="main">
+    {% block content %}
 
-  {% endblock %}
+    {% endblock %}
+  </section>
 
 <!-- JavaScript at the bottom for fast page loading -->
 {% compress js %}

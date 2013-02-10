@@ -1,16 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
 
+$black: #1C140D;
+$links-hover-color: #CBE86B;
+$beige: #F2E9E1;
+$soft-grey: #ABABAB;
+
 body {
     margin: 0 auto;
     max-width: 940px;
     font-family: 'Merriweather', serif;
 
     a {
-        color: #ABABAB;
-
+        color: $soft-grey;
+        &:hover {
+            color: $links-hover-color;
+            background-color: transparent;
+            text-decoration: none;
+        }
     }
 
-    header {
+    header.global {
         height: 30px;
         padding: 20px 0;
         border-bottom: 1px solid #ddd;
@@ -25,20 +34,56 @@ body {
             line-height: 1em;
 
             a {
-                color: #333;
+                color: $black;
                 &:hover {
+                    color: $links-hover-color;
+                    background-color: transparent;
                     text-decoration: none;
-                    color: #333;
                 }
             }
         }
 
-        nav {
+        nav.main-nav {
             float: left;
             margin-left: 30px;
 
             ul {
                 padding-top: 5px;
+                a:hover {
+                    color: $links-hover-color;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        nav.social-nav {
+            ul {
+                margin: 0;
+                padding: 0;
+                padding-top: 5px;
+
+                li {
+                    display: inline-block;
+                    font-size: 20px;
+                    a:hover{
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    article {
+        header {
+            h1 {
+                font-size: 26px;
+                a {
+                    color: $black;
+                }
+            }
+            time {
+                color: $soft-grey;
             }
         }
     }
