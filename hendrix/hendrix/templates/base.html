@@ -33,7 +33,7 @@
   {% endcompress %}
 
 </head>
-<body>
+<body class="{% block bodyclass %}{% endblock %}">
   <header class="global">
     <h1><a href="/">Pablo Recio</a></h1>
     <nav class="main-nav">
@@ -53,7 +53,7 @@
       </ul>
     </nav>
   </header>
-  <section role="main">
+  <section role="main" class="main">
     {% block content %}
 
     {% endblock %}
