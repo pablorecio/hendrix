@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block bodyclass %}about{% endblock %}
+
+{% block content %}
+<section class="personal">
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="me-photo-wrapper">
+                <img src="{{ STATIC_URL }}img/me.png" alt="Pablo Recio" class="me-photo">
+            </div>
+        </div>
+        <div class="span8">
+            <section class="main-information">
+                <header>
+                    <h3>
+                        <strong>Hi there!</strong> I am <strong>Pablo Recio</strong>.
+                    </h3>
+                    <h3>
+                        I love solving problems.
+                    </h3>
+                </header>
+
+                <p>
+                    I'm a <strong>software developer</strong>, and my
+                    toolbox contains awesome things like
+                    <a href="https://www.djangoproject.com/" target="_blank">Django</a>,
+                    <a href="http://www.python.org/" target="_blank">Python</a>,
+                    <a href="http://git-scm.com/" target="_blank">Git</a>,
+                    strong backend skills and full-stack knowledge
+                    about web development. I love <strong>Open Source</strong>
+                    software and try to do my best for helping the community to grow.
+                </p>
+                <p>
+                    In my spare time I try to improve some other skills like
+                    <strong>photography</strong> or <strong>cooking</strong>. Well,
+                    let's be honest, I also enjoy some time around friends and
+                    pints.
+                </p>
+            </section>
+        </div>
+    </div>
+</section>
+
+<section class="skills toolbox">
+    <div class="row-fluid">
+        <div class="span3">
+            <h2><i class="icon icon-beaker"></i> Django</h2>
+            <p>
+                Described itself as <em>The Web framework for perfectionists with deadlines</em>,
+                Django makes my life really easier. Since I embraced it, I just love coding
+                webapps.
+            </p>
+        </div>
+        <div class="span3">
+            <h2><i class="icon icon-cogs"></i> Python</h2>
+            <p>
+                I started coding in Python for my final degree project, and looking backwards is one of the
+                best choices I ever made. It's amazing the really cool things you can do with it with just
+                a few lines of code.
+            </p>
+        </div>
+        <div class="span3">
+            <h2><i class="icon icon-globe"></i> Git</h2>
+            <p>
+                Since I learnt how to work with a SCM (in that time, it was Subversion) I just feel naked
+                coding without one. And Git is just perfect for keeping a good and clean history of your projects.
+            </p>
+        </div>
+        <div class="span3">
+            <h2><i class="icon icon-fighter-jet"></i> Google App Engine</h2>
+            <p>
+                GAE has lights and shadows. Since I started using it, I learnt how to use its lights and
+                how to by-pass its shadows.
+            </p>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span3">
+            <h2><i class="icon icon-heart"></i> Open Source/FLOSS</h2>
+            <p>
+                Since I studied in the university, Open Source has been a strong belief for me. All the
+                code I write in my spare time is OS, and I try to use OS tools when I can.
+            </p>
+        </div>
+        <div class="span3">
+            <h2><i class="icon icon-wrench"></i> Javascript</h2>
+            <p>
+                Let's face it: I suck at Javascript, it's just <em>too</em> different that backend code.
+                But I know that the future of webapps will go down that road. I'm trying to improve this.
+            </p>
+        </div>
+        <div class="span3">
+            <h2><i class="icon icon-laptop"></i> UNIX systems</h2>
+            <p>
+                I used to hate working with servers. When I got to have well configured machine,
+                easy to maintain... I discovered how beautiful it is.
+            </p>
+        </div>
+        <div class="span3">
+            <h2><i class="icon icon-book"></i> Big Data</h2>
+            <p>
+                Who wouldn't love to work with hundred of thousands of rows? Being honest, is not something
+                I'm doing a lot this days, but it's a field I'm looking forward to dig into it.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="resume skills">
+    <div class="row-fluid">
+        <div class="span6">
+            <h2><i class="icon icon-suitcase"></i> Experience</h2>
+            <ul>
+                <li>
+                    Django Developer at
+                    <a href="http://p.ota.to" target="_blank">Potato London</a>
+                    - <em>Feb. 2012 to present</em>
+                </li>
+                <li>
+                    Co-founder &amp; CTO at
+                    <a href="http://www.zocolab.es" target="_blank">Zocolab</a>
+                    - <em>Jun. 2011 to Feb. 2012</em>
+                </li>
+                <li>
+                    Django Developer at
+                    <a href="http://www.yaco.es/" target="_blank">Yaco Sistemas</a>
+                    - <em>Jun. 2010 to Jun. 2011</em>
+                </li>
+                <li>
+                    Software Developer (internship) at
+                    <a href="http://www.yaco.es/" target="_blank">AlQuimia</a>
+                    - <em>Jul. 2009 to Jan. 2010</em>
+                </li>
+            </ul>
+        </div>
+        <div class="span6">
+            <h2><i class="icon icon-key"></i> Academics</h2>
+            <ul>
+                <li>BSc in Computer Engineering at University of Cádiz
+                    - <em>Sep. 2005 to Feb. 2010</em></li>
+            </ul>
+            <h2><i class="icon icon-bookmark"></i> Papers</h2>
+            <ul>
+                <li>Collaboration and competitiveness in project-based learning at MCCE10 -
+                    <em>ISBN: 978-84-694-0523-9</em> -
+                    <a href="http://es.scribd.com/doc/33064791/MCCE-2010-Proceedings" target="_blank">link</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="software skills">
+    <div class="row-fluid">
+        <div class="span6">
+            <h2><i class="icon icon-tasks"></i> Projects</h2>
+            <ul>
+                <li><a href="https://github.com/pyriku/hendrix" target="_blank">Hendrix</a> -
+                    Blogging engine used for my personal web page</li>
+                <li><a href="http://merengueproject.org/" target="_blank">Merenge CMS</a> -
+                    Django-based CMS</li>
+                <li><a href="https://github.com/pyriku/resistencia-1812" target="_blank">Resistencia: 1812</a> -
+                    Final Degree Project. Desktop application for allowing students to learn about expert systems
+                </li>
+                <li><a href="https://github.com/pyriku/NoCKtMetal" target="_blank">NoCKtMetal</a> -
+                    jRPG written in C++ with 2 friends during University</li>
+            </ul>
+        </div>
+        <div class="span6">
+            <h2><i class="icon icon-group"></i> Contributions</h2>
+            <ul>
+                <li><a href="https://github.com/django/django" target="_blank">Django</a> -
+                    Some small patches yet, but I'm aiming to contribute even further</li>
+                <li><a href="https://github.com/potatolondon/search" target="_blank">Thor</a> -
+                    Simple wrapper for Google Search API</li>
+                <li><a href="http://guake.org/" target="_blank">Guake</a> -
+                    Guake is a top-down terminal for Gnome</li>
+                <li><a href="http://projects.gnome.org/easytag/" target="_blank">EasyTag</a> -
+                    Small patch for make the application work in small resolutions</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="other skills">
+    <div class="row-fluid">
+        <div class="span6">
+            <h2><i class="icon icon-lightbulb"></i> Conferences</h2>
+            <ul>
+                <li><a href="http://2013.djangocon.eu/">DjangoCon 2013</a> at Warsaw (I got tickets!)</li>
+                <li><a href="http://2012.djangocon.eu/">DjangoCon 2012</a> at Zurich</li>
+            </ul>
+        </div>
+        <div class="span6">
+            <h2><i class="icon icon-leaf"></i> Hobbies</h2>
+            <ul>
+                <li><strong>Photography</strong> - I'm still really newbie here</li>
+                <li><strong>Cooking</strong> - Getting better each week</li>
+                <li><strong>Music</strong> - Listening a lot of Rock and Metal</li>
+                <li><strong>Books</strong> - I enjoy a lot Sci-Fi and fantasy novels</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

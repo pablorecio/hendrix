@@ -1,0 +1,68 @@
+.about {
+    .main {
+        margin-top: 40px;
+        .me-photo-wrapper {
+            position: relative;
+            max-width: 250px;
+
+            &:before, &:after {
+                @include box-shadow(0 15px 10px #777);
+                @include transform(rotate(-3deg));
+                z-index: -1;
+                position: absolute;
+                content: "";
+                bottom: 15px;
+                left: 10px;
+                width: 50%;
+                top: 80%;
+                max-width:250px;
+                background: #777;
+            }
+
+            &:after {
+                @include transform(rotate(3deg));
+                right: 10px;
+                left: auto;
+            }
+        }
+
+        .main-information {
+            margin-bottom: 40px;
+            header {
+                font-size: 30px;
+                margin-bottom: 20px;
+                line-height: 1.1em;
+                h3 {
+                    font-weight: normal;
+                }
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 1.2em;
+            }
+        }
+
+        h2 {
+            .icon {
+                margin-right: 5px;
+            }
+            font-size: 22px;
+        }
+
+
+        ul {
+            margin: 0;
+            list-style: none;
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        .skills {
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            padding: 40px 0;
+        }
+    }
+}
