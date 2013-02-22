@@ -9,6 +9,7 @@ body {
     margin: 0 auto;
     max-width: 940px;
     font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 1.4em;
     font-size: 18px;
 
     a {
@@ -75,54 +76,58 @@ body {
         }
     }
 
-    article {
-        margin-top: 15px;
-        header {
-            h1 {
-                font-size: 26px;
-                a {
-                    color: $black;
-                }
-            }
+    .main {
+        margin-top: 20px;
 
-            .article-information {
-                overflow: hidden;
-                clear: both;
-                padding: 5px 0;
-
-                time {
-                    color: $soft-grey;
-                    float: left;
-                    margin-top: 4px;
+        article {
+            margin-bottom: 20px;
+            header {
+                h1 {
+                    font-size: 26px;
+                    a {
+                        color: $black;
+                    }
                 }
 
-                .tags {
-                    list-style: none;
-                    margin: 0;
-                    padding: 0;
-                    display: inline-block;
-                    float: right;
+                .article-information {
+                    overflow: hidden;
+                    clear: both;
+                    padding: 5px 0;
 
-                    li {
-                        padding: 4px 10px;
-                        margin-left: 5px;
+                    time {
+                        color: $soft-grey;
+                        float: left;
+                        margin-top: 4px;
+                    }
+
+                    .tags {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
                         display: inline-block;
-                        background-color: #eee;
-                        -webkit-border-radius: 6px;
-                        -moz-border-radius: 6px;
-                        border-radius: 6px;
+                        float: right;
 
-                        &:hover, a:hover {
-                            color: $soft-grey;
-                            background-color: $links-hover-color;
-                            text-decoration: none;
+                        li {
+                            padding: 4px 10px;
+                            margin-left: 5px;
+                            display: inline-block;
+                            background-color: #eee;
+                            -webkit-border-radius: 6px;
+                            -moz-border-radius: 6px;
+                            border-radius: 6px;
+
+                            &:hover, a:hover {
+                                color: $soft-grey;
+                                background-color: $links-hover-color;
+                                text-decoration: none;
+                            }
                         }
                     }
                 }
             }
-        }
-        p {
-            margin-top: 5px;
+            p {
+                margin-top: 5px;
+            }
         }
     }
 
