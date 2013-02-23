@@ -7,6 +7,15 @@
 <script type="text/javascript" src="{{ STATIC_URL }}js/libs/highcharts-more.js"></script>
 <script type="text/javascript">
 $(function () {
+
+    function convertToSlug(text)
+    {
+        return text
+            .toLowerCase()
+            .replace(/[^\w ]+/g,'')
+            .replace(/ +/g,'-');
+    }
+
     window.chart = new Highcharts.Chart({
 
         chart: {
@@ -15,9 +24,10 @@ $(function () {
             type: 'line'
         },
 
+        colors: ["#CBE86B"],
+
         title: {
-            text: '',
-            x: -80
+            text: ''
         },
 
         pane: {
@@ -34,17 +44,37 @@ $(function () {
         yAxis: {
             gridLineInterpolation: 'polygon',
             lineWidth: 0,
+            tickInterval: 10,
             min: 0,
-            max: 10
+            max: 10,
+            labels: {
+               enabled: false
+           },
         },
 
         plotOptions: {
             line: {
-
+                marker: {
+                    enabled: false
+                },
+                point: {
+                    events: {
+                        mouseOver: function() {
+                            // TODO
+                        },
+                        mouseOut: function() {
+                            // TODO
+                        }
+                    }
+                }
             }
         },
 
         legend: {
+            enabled: false
+        },
+
+        tooltip: {
             enabled: false
         },
 
@@ -103,7 +133,7 @@ $(function () {
 
 <section class="skills toolbox">
     <div class="row-fluid">
-        <div class="offset3 span3">
+        <div class="offset3 span3 skill-django">
             <h2><i class="icon icon-beaker"></i> Django</h2>
             <p>
                 Described itself as <em>The Web framework for perfectionists with deadlines</em>,
@@ -111,7 +141,7 @@ $(function () {
                 webapps.
             </p>
         </div>
-        <div class="span3">
+        <div class="span3 skill-python">
             <h2><i class="icon icon-cogs"></i> Python</h2>
             <p>
                 I started coding in Python for my final degree project, and looking backwards is one of the
@@ -123,14 +153,16 @@ $(function () {
     <div class="row-fluid">
         <div class="span3">
             <div class="row-fluid">
-                <div class="span12">
+                <div class="span12 skill-git">
                     <h2><i class="icon icon-globe"></i> Git</h2>
                     <p>
                         Since I learnt how to work with a SCM (in that time, it was Subversion) I just feel naked
                         coding without one. And Git is just perfect for keeping a good and clean history of your projects.
                     </p>
                 </div>
-                <div class="span12">
+            </div>
+            <div class="row-fluid">
+                <div class="span12 skill-open-source">
                     <h2><i class="icon icon-heart"></i> Open Source/FLOSS</h2>
                     <p>
                         Since I studied in the university, Open Source has been a strong belief for me. All the
@@ -142,14 +174,16 @@ $(function () {
         <div class="span6" style="height: 400px;" id="skills-graph"></div>
         <div class="span3">
             <div class="row-fluid">
-                <div class="span12">
+                <div class="span12 skill-gae">
                     <h2><i class="icon icon-fighter-jet"></i> Google App Engine</h2>
                     <p>
                         GAE has lights and shadows. Since I started using it, I learnt how to use its lights and
                         how to by-pass its shadows.
                     </p>
                 </div>
-                <div class="span12">
+            </div>
+            <div class="row-fluid">
+                <div class="span12 skill-javascript">
                     <h2><i class="icon icon-wrench"></i> Javascript</h2>
                     <p>
                         Let's face it: I suck at Javascript, it's just <em>too</em> different that backend code.
@@ -160,14 +194,14 @@ $(function () {
         </div>
     </div>
     <div class="row-fluid">
-        <div class="offset3 span3">
+        <div class="offset3 span3 skill-unix-systems">
             <h2><i class="icon icon-laptop"></i> UNIX systems</h2>
             <p>
                 I used to hate working with servers. When I got to have well configured machine,
                 easy to maintain... I discovered how beautiful it is.
             </p>
         </div>
-        <div class="span3">
+        <div class="span3 skill-big-data">
             <h2><i class="icon icon-book"></i> Big Data</h2>
             <p>
                 Who wouldn't love to work with hundred of thousands of rows? Being honest, is not something
