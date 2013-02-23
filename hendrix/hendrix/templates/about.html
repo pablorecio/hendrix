@@ -2,6 +2,65 @@
 
 {% block bodyclass %}about{% endblock %}
 
+{% block extrajs %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/libs/highcharts.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/libs/highcharts-more.js"></script>
+<script type="text/javascript">
+$(function () {
+    window.chart = new Highcharts.Chart({
+
+        chart: {
+            renderTo: 'skills-graph',
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: '',
+            x: -80
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Python', 'GAE', 'Javascript',
+                    'Big Data', 'UNIX systems', 'Open Source', 'Git', 'Django'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0,
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+            max: 10
+        },
+
+        plotOptions: {
+            line: {
+
+            }
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        series: [{
+            name: 'Skills',
+            data: [9, 7, 6, 5, 7, 7, 9, 10],
+        }]
+    });
+});
+</script>
+{% endblock %}
+
 {% block content %}
 <section class="personal">
     <div class="row-fluid">
@@ -44,7 +103,7 @@
 
 <section class="skills toolbox">
     <div class="row-fluid">
-        <div class="span3">
+        <div class="offset3 span3">
             <h2><i class="icon icon-beaker"></i> Django</h2>
             <p>
                 Described itself as <em>The Web framework for perfectionists with deadlines</em>,
@@ -60,38 +119,48 @@
                 a few lines of code.
             </p>
         </div>
-        <div class="span3">
-            <h2><i class="icon icon-globe"></i> Git</h2>
-            <p>
-                Since I learnt how to work with a SCM (in that time, it was Subversion) I just feel naked
-                coding without one. And Git is just perfect for keeping a good and clean history of your projects.
-            </p>
-        </div>
-        <div class="span3">
-            <h2><i class="icon icon-fighter-jet"></i> Google App Engine</h2>
-            <p>
-                GAE has lights and shadows. Since I started using it, I learnt how to use its lights and
-                how to by-pass its shadows.
-            </p>
-        </div>
     </div>
-
     <div class="row-fluid">
         <div class="span3">
-            <h2><i class="icon icon-heart"></i> Open Source/FLOSS</h2>
-            <p>
-                Since I studied in the university, Open Source has been a strong belief for me. All the
-                code I write in my spare time is OS, and I try to use OS tools when I can.
-            </p>
+            <div class="row-fluid">
+                <div class="span12">
+                    <h2><i class="icon icon-globe"></i> Git</h2>
+                    <p>
+                        Since I learnt how to work with a SCM (in that time, it was Subversion) I just feel naked
+                        coding without one. And Git is just perfect for keeping a good and clean history of your projects.
+                    </p>
+                </div>
+                <div class="span12">
+                    <h2><i class="icon icon-heart"></i> Open Source/FLOSS</h2>
+                    <p>
+                        Since I studied in the university, Open Source has been a strong belief for me. All the
+                        code I write in my spare time is OS, and I try to use OS tools when I can.
+                    </p>
+                </div>
+            </div>
         </div>
+        <div class="span6" style="height: 400px;" id="skills-graph"></div>
         <div class="span3">
-            <h2><i class="icon icon-wrench"></i> Javascript</h2>
-            <p>
-                Let's face it: I suck at Javascript, it's just <em>too</em> different that backend code.
-                But I know that the future of webapps will go down that road. I'm trying to improve this.
-            </p>
+            <div class="row-fluid">
+                <div class="span12">
+                    <h2><i class="icon icon-fighter-jet"></i> Google App Engine</h2>
+                    <p>
+                        GAE has lights and shadows. Since I started using it, I learnt how to use its lights and
+                        how to by-pass its shadows.
+                    </p>
+                </div>
+                <div class="span12">
+                    <h2><i class="icon icon-wrench"></i> Javascript</h2>
+                    <p>
+                        Let's face it: I suck at Javascript, it's just <em>too</em> different that backend code.
+                        But I know that the future of webapps will go down that road. I'm trying to improve this.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="span3">
+    </div>
+    <div class="row-fluid">
+        <div class="offset3 span3">
             <h2><i class="icon icon-laptop"></i> UNIX systems</h2>
             <p>
                 I used to hate working with servers. When I got to have well configured machine,
